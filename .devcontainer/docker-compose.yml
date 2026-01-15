@@ -1,0 +1,16 @@
+version: '3.8'
+
+services:
+  theses-checker:
+    build:
+      context: ..
+      dockerfile: .devcontainer/Dockerfile
+    container_name: theses-checker-dev
+    volumes:
+      - ..:/workspace
+    working_dir: /workspace
+    command: /bin/bash
+    stdin_open: true
+    tty: true
+    environment:
+      PYTHONUNBUFFERED: 1
